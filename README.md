@@ -15,5 +15,18 @@ Día del mes, de 1 a 31
 Día de la semana, de 0 a 6
 Hora, de 0 a 23
 Número del día del año
+
 Para las primeras características se hace una codificación periódica, que consiste en hacer un mapeo a dos componentes: seno y coseno. Esto ayuda a suavizar el valor de las características a través del tiempo y a su vez ayuda a escalar los datos.
 
+
+Por otro lado, se añaden características de desfase:
+
+Número de órdenes de la n hora anterior, con n de 1 a 5.
+Promedio móvil de las 24 horas anteriores.
+Desviación estándar móvil de las 24 horas anteriores.
+Diferencia de número de órdenes entre las dos horas anteriores
+Adicionalmente se añadieron dos columnas con la media y desviación estándar móviles ponderadas exponencialmente. Estas dos funciones son similares a sus contrapartes 'rolling' pero el resultado se calcula ponderando los valores de acuerdo a qué tan recientes son.
+
+Promedio móvil ponderado exponencialmente.
+Desviación estándar móvil ponderado exponencialmente.
+Se realiza un mapa de calor de nivel de correlación entre características para entender cuáles de las características tienen mayor nivel de correlación con el objetivo.
